@@ -3,10 +3,10 @@
 /**
  * Plugin Name: zM Plugin Post Type
  * Plugin URI: http://zanematthew.com/
- * Description: Create a Plugin Custom Post Type
- * Version: 1.1
+ * Description: Creates a Plugins Post Type with various usefull taxonomies and meta fields.
+ * Version: 0.1-beta
  * Author: Zane Matthew
- * Author URI:
+ * Author URI: http://zanematthew.com/
  * License: GPL V2 or Later
  */
 
