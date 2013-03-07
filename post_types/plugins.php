@@ -20,7 +20,8 @@ $plugin->post_type = array(
         'supports' => array(
             'title',
             'editor',
-            'thumbnail'
+            'thumbnail',
+            'excerpt'
         ),
         'taxonomies' => array(
             'license'
