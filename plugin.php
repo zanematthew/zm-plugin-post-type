@@ -3,7 +3,7 @@
 /**
  * Plugin Name: zM Plugin Post Type
  * Plugin URI: http://zanematthew.com/
- * Description: Creates a Plugins Post Type with various usefull taxonomies and meta fields.
+ * Description: Creates a Plugins Post Type with various usefull taxonomies and meta fields. Note this plugin requires "zM Easy CPT", https://github.com/zanematthew/zm-easy-cpt
  * Version: 0.1-beta
  * Author: Zane Matthew
  * Author URI: http://zanematthew.com/
@@ -67,12 +67,22 @@ $deactivate_fn = function(){
 register_deactivation_hook( __FILE__, $deactivate_fn );
 
 
-$files = array(
-    'functions.php', // Shared
-    'admin-tags.php', // Admin only
-    'template-tags.php', // Theme only
-    );
+/**
+ * Shared functions between admin and theme
+ */
+if ( file_exists( plugin_dir_path( __FILE__ ) . 'functions.php' ) )
+    require_once plugin_dir_path( __FILE__ ) . 'functions.php';
 
-foreach( $files as $file ){
-    if ( file_exists( plugin_dir_path( __FILE__ ) . $file ) ) require_once plugin_dir_path( __FILE__ ) . $file;
-}
+
+/**
+ * Admin only functions
+ */
+if ( is_admin() && file_exists( plugin_dir_path( __FILE__ ) . 'admin-tags.php' ) )
+    require_once plugin_dir_path( __FILE__ ) . 'admin-tags.php';
+
+
+/**
+ * Theme only functions
+ */
+if ( ! is_admin() && file_exists( plugin_dir_path( __FILE__ ) . 'template-tags.php' ) )
+    require_once plugin_dir_path( __FILE__ ) . 'template-tags.php';
