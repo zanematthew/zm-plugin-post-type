@@ -21,7 +21,8 @@ $plugin->post_type = array(
             'title',
             'editor',
             'thumbnail',
-            'excerpt'
+            'excerpt',
+            'comments'
         ),
         'taxonomies' => array(
             'license'

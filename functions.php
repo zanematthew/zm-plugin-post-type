@@ -10,7 +10,6 @@ if ( ! get_option('zm_easy_cpt_version' ) ){
         echo '<div class="updated"><p>This plugin requires <strong>zM Easy Custom Post Types</strong>.</p></div>';
     }
     add_action('admin_notices', 'zm_ev_admin_notice');
-    return;
 }
 
 /**
