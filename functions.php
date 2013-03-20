@@ -28,7 +28,7 @@ function zm_plugin_post_type_latest(){
 
     $args = array(
         'post_type' => 'plugins',
-        'numberposts' => 5,
+        'numberposts' => 3,
         );
 
     $plugins = get_posts( $args );
